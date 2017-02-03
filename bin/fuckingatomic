@@ -140,6 +140,12 @@ function createApplication(app_name, path) {
       complete();
     });
 
+
+    mkdir(path + '/modules', function(){
+      write(path + '/routes/index.js', index);
+      complete();
+    });
+
     mkdir(path + '/views', function(){
       switch (program.template) {
         case 'ejs':
